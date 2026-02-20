@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tres Puntos - Herramientas de Diseño</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google fonts-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header id="top">
+        <h1 class="site-heading ...">...</h1>
+    </header>
+    <header>
+
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+            <span class="site-heading-upper text-primary mb-3">herramientas para oficios manuales</span>
+            <span class="site-heading-lower">Tres Puntos</span>
+        </h1>
+    </header>
+
+    <!-- Navigation-->
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top shadow-lg mx-auto px-4"
+        style="width: 90%; max-width: 1140px; top: 20px; border-radius: 1.5rem">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center">
+                <img src="assets/favicon.png" alt="Logo Tres Puntos" class="animated-logo me-2"
+                    style="width: 30px; height: auto;">
+                <!--span class="fw-bold d-none d-lg-inline text-uppercase">Tres Puntos</span-->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-5"><a class="nav-link text-uppercase" href="#top">Home</a></li>
+                    <li class="nav-item dropdown px-lg-5">
+                        <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <!-- Plegaderas de metal -->
+                            <li>
+                                <a class="dropdown-item" href="#contenido-herramientas" onclick="irACategoria(0)">
+                                    Plegaderas de metal
+                                </a>
+                            </li>
+
+                            <!-- Plegaderas de teflón -->
+                            <li>
+                                <a class="dropdown-item" href="#contenido-herramientas" onclick="irACategoria(1)">
+                                    Plegaderas de teflon
+                                </a>
+                            </li>
+                            <!-- Set plegaderas -->
+                            <li>
+                                <a class="dropdown-item" href="#contenido-herramientas" onclick="irACategoria(2)">
+                                    Set de plegaderas
+                                </a>
+                            </li>
+
+                            <!-- Punzones -->
+
+                            <li class="dropdown dropend">
+                                <a class="dropdown-item " href="#contenido-herramientas" onclick="irACategoria(3)">
+                                    Punzones
+                                </a>
+                            </li>
+
+                            <!-- Cortantes -->
+                            <li><a class="dropdown-item" href="#contenido-herramientas"
+                                    onclick="irACategoria(4)">Cortantes</a></li>
+                            
+                            <li><a class="dropdown-item" href="pedidosPersonalizados.html">Pedidos Personalizados</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item px-lg-5"><a class="nav-link text-uppercase" href="quienesSomos.html">¿Quienes
+                            somos?</a></li>
+                    <li class="nav-item px-lg-5"><a class="nav-link text-uppercase" href="#footer">Contactanos</a></li>
+                    <li class="nav-item px-lg-5 d-flex align-items-center">
+                        <a class="nav-link p-0 d-flex align-items-center"
+                            href="https://www.instagram.com/trespuntosherramientas" target="_blank">
+                            <i class="bi bi-instagram fs-4"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" class="hero-section clearfix">
+        <div class="container">
+            <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/intro.webp" alt="..." />
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-0">
+                        <!--span class="section-heading-upper">Herramientas de diseño para encuadernacion</span>
+                        <span class="section-heading-lower">Tres puntos</span-->
+                    </h2>
+                    <p class="mb-3">Trabajamos con materiales nobles y procesos manuales. Nos destacamos por la
+                        combinación de diseño y funcionalidad. Adquiriendo nuestras herramientas estas apoyando al
+                        desarrollo de la industria nacional</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="productos section py-5 cta-box cta">
+
+        <!-- Título -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 class="section-heading mb-4">
+                <span class="section-heading-lower" style="font-size: 4rem;">Productos</span>
+            </h2>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="container-fluid px-4" data-aos="fade-up" data-aos-delay="100">
+
+            <section class="herramientas-section cta">
+                <div class="container-fluid py-5 text-center">
+
+                    <div class="position-relative mb-5" style="height: 80px;">
+
+                        <!-- Título de la sección -->
+                        <h2 id="titulo-seccion"
+                            class="section-heading position-absolute top-50 start-50 translate-middle text-center mb-0"
+                            style="font-size: 5rem;">
+                            Plegaderas<br> de Metal
+                        </h2>
+                        <!-- Botón flecha izquierda -->
+                        <button id="btn-prev"
+                            class="btn p-0 m-0 border-0 bg-transparent shadow-none position-absolute start-0 top-50 translate-middle-y"
+                            style="box-shadow: none; outline: none;">
+                            <i class="bi bi-arrow-left-circle fs-1 nav-icon"></i>
+                        </button>
+                        <!-- Botón flecha derecha -->
+                        <button id="btn-next"
+                            class="btn p-0 m-0 border-0 bg-transparent shadow-none position-absolute end-0 top-50 translate-middle-y"
+                            style="box-shadow: none; outline: none;">
+                            <i class="bi bi-arrow-right-circle fs-1 nav-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="position-relative">
+
+                        <!-- Los productos se generan dinámicamente desde JS -->
+                        <div id="contenido-herramientas" class="row justify-content-center"></div>
+                    </div>
+                </div>
+
+                <!-- Modal para mostrar imagen ampliada -->
+                <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content bg-transparent border-0">
+                            <img src="assets/img/plegadora_acero.jpg" class="img-fluid rounded" alt="Imagen grande"
+                                id="modal-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <!-- Mapa flotante arriba -->
+    <div class="mapa-embed">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26305.115583096496!2d-58.64632594754814!3d-34.49934885438883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb4558d53941%3A0x4a50eedaa7f8f645!2sDon%20Torcuato%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1752181866314!5m2!1ses-419!2sar"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <footer id="footer" class="text-light py-5 mt-5 footer position-relative  z-index: 1000;"
+        style="position: relative;">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-4 text-center" style="margin-top: 2rem;">
+                    <img src="assets/favicon.png" alt="Icono Tres Puntos" class="animated-logo me-2"
+                        style="width: 48px; height: 48px; margin-bottom: 8px;">
+                    <h5 class="text-uppercase">Tres Puntos</h5>
+
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase mb-3">Contacto</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i>Don Torcuato, Buenos Aires, Argentina</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>trespuntos@gmail.com</p>
+                    <p>
+                        <i class="bi bi-instagram me-2"></i>
+                        <a href="https://www.instagram.com/trespuntosherramientas" target="_blank"
+                            class="text-white text-decoration-none">@trespuntosherramientas</a>
+                    </p>
+                </div>
+                <!-- Podés dejar la tercera columna vacía o eliminarla -->
+            </div>
+            <hr />
+            <div class="text-center small mt-3">
+                © 2025 Tres Puntos. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Botón flotante del carrito -->
+    <button id="boton-carrito-flotante" class="btn btn-amarillo-naranja shadow-lg rounded-circle position-fixed"
+        data-bs-toggle="modal" data-bs-target="#modalCarrito"
+        style="bottom: 20px; right: 20px; z-index: 1050; width: 60px; height: 60px;">
+        <img src="assets/carritoGeneral.png" alt="Carrito" style="height: 30px;">
+        <span id="contador-carrito"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+        </span>
+    </button>
+    <!-- Modal Carrito -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCarritoLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="carrito-contenido">
+                    <!-- Aquí van los productos agregados -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="finalizarCompra()">Finalizar
+                        Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

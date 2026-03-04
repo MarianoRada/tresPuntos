@@ -7,7 +7,7 @@ let indiceActual = 0;
 
 async function cargarProductos() {
   try {
-    const res = await fetch("http://localhost:3000/api/productos");
+    const res = await fetch("https://trespuntos.onrender.com/api/productos");
     const productos = await res.json();
 
     categorias = Object.values(

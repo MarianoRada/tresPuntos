@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 require("dotenv").config();
 
 const uri = process.env.MONGO_URI;
@@ -11,70 +11,52 @@ const PORT = process.env.PORT || 3000;
 
 let db;
 
-async function connectDB() {
-  try {
-    await client.connect();
-    db = client.db("tresPuntos");
-    console.log("Conectado a MongoDB");
-  } catch (error) {
-    console.error("Error conectando a MongoDB:", error);
-  }
-}
-
-connectDB();
-
 app.use(cors());
 app.use(express.json());
 
-
-// 🔥 POST
-app.post("/api/productos", async (req, res) => {
+async function startServer() {
   try {
-    const resultado = await db
-      .collection("productos")
-      .insertOne(req.body);
+    await client.connect();
+    db = client.db("tresPuntos");
+    console.log("✅ Conectado a MongoDB");
 
-    res.status(201).json({
-      mensaje: "Producto guardado en MongoDB",
-      idMongo: resultado.insertedId
+    // 🔥 POST
+    app.post("/api/productos", async (req, res) => {
+      try {
+        const resultado = await db.collection("productos").insertOne(req.body);
+        res.status(201).json({ mensaje: "Producto guardado", idMongo: resultado.insertedId });
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
     });
 
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+    // 🔥 GET
+    app.get("/api/productos", async (req, res) => {
+      try {
+        const productos = await db.collection("productos").find().toArray();
+        res.json(productos);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
 
+    // 🔥 DELETE
+    app.delete("/api/productos/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+        await db.collection("productos").deleteOne({ _id: new ObjectId(id) });
+        res.json({ mensaje: "Producto eliminado" });
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
 
-// 🔥 GET
-app.get("/api/productos", async (req, res) => {
-  try {
-    const productos = await db
-      .collection("productos")
-      .find()
-      .toArray();
-
-    res.json(productos);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-
-// 🔥 DELETE
-app.delete("/api/productos/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    await db.collection("productos").deleteOne({ id });
-
-    res.json({ mensaje: "Producto eliminado de MongoDB" });
+    // Arrancar servidor
+    app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
 
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("❌ Error conectando a MongoDB:", error);
   }
-});
+}
 
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+startServer();
